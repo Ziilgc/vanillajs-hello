@@ -6,10 +6,10 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  document.querySelector("#excusa").innerHTML = GenerateExcuse;
+  document.querySelector("#excusa").innerHTML = GenerateExcuse();
   console.log("Hello Rigo from the console!");
 };
-function GenerateExcuse() {
+let GenerateExcuse = () => {
   let who = ["The dog", "My grandma", "The mailman", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
   let what = ["my homework", "my phone", "the car"];
@@ -26,5 +26,5 @@ function GenerateExcuse() {
   let whatN = Math.floor(Math.random() * what.length);
   let whenN = Math.floor(Math.random() * when.length);
 
-  return whoN + actionN + whatN + whenN;
-}
+  return who[whoN] + " " + action[actionN] + what[whatN] + when[whenN];
+};
